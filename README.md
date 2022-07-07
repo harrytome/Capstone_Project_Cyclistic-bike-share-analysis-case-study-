@@ -180,6 +180,8 @@ Dashboard created using **Tableau** showing usage by members can be seen below.
 
 [Dashboard](https://public.tableau.com/views/CAPSTONEPROJECT_16570229578750/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link)
 
+![Dashboard 1](https://user-images.githubusercontent.com/102047903/177880467-7a765357-f3ce-445a-bec9-d1dae8f7d5b3.png)
+
 Save data to CSV.
 ```{r}
 getwd()
