@@ -1,6 +1,10 @@
 **Title:** **Capstone Project_Cyclistic-bike-share-analysis-case-study**
+
 **Author:** **Harrison Osiezagha**
+
 **Date:** **2022-07-06**
+
+![Cyclist](https://user-images.githubusercontent.com/102047903/177883488-70588b07-1fc3-42d7-9901-ae02c98e0dc4.JPG)
 
 
 **INTRODUCTION**
