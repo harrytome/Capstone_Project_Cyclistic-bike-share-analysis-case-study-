@@ -1,9 +1,9 @@
-Title: "Capstone Project_Cyclistic-bike-share-analysis-case-study"
+**Title: "Capstone Project_Cyclistic-bike-share-analysis-case-study"
 Author: "Harrison Osiezagha"
 Date: '2022-07-06'
 
 
-##INTRODUCTION
+**INTRODUCTION**
 
 I am a junior data analyst working in the marketing analyst team at Cyclistic, a bike-share company in Chicago.
 In 2016, Cyclistic launched a successful bike-share offering. Since then, the program has grown to a fleet of 5,824 bicycles that are geotracked and locked into a network of 692 stations across Chicago. The bikes can be unlocked from one station and returned to any other station in the system anytime.
@@ -11,26 +11,26 @@ In 2016, Cyclistic launched a successful bike-share offering. Since then, the pr
 Cyclistic’s marketing strategy relied on building general awareness and appealing to broad consumer segments.One approach that helped make these things possible was the flexibility of its pricing plans: single-ride passes, full-day passes,
 and annual memberships. Customers who purchase single-ride or full-day passes are referred to as casual riders. Customers who purchase annual memberships are Cyclistic members.
 
-##ASK
+**ASK**
 
 In order to increase revenue, the company wants to come up with a new marketing strategy to convert casual riders into annual members. Therefore, I am tasked with analysing bike usage data to understand **how casual riders and annual members use Cyclistic bikes differently**, to help create a data driven marketing strategy.
 
-Key stakeholders:
+*Key stakeholders:
 
    *  Lily Moreno,the Director of marketing and my manager.
    *  The Cyclistic marketing analytics team(my teammates).
    *  The Cyclistic executive team.
 
    
-##PREPARE
+**PREPARE**
 
-I used Cyclistic’s historical trip data to analyze and identify trends, which was downloaded [here] (link https://divvy-tripdata.s3.amazonaws.com/index.html). The data was made available by Motivate International Inc. under this [license] (https://www.divvybikes.com/data-license-agreement). Analysis for this case study was done using data from **Jan 2021 to Dec 2021**, which is stored in separate files for each month.
+I used Cyclistic’s historical trip data to analyze and identify trends, which was downloaded [here](link https://divvy-tripdata.s3.amazonaws.com/index.html). The data was made available by Motivate International Inc. under this [license](https://www.divvybikes.com/data-license-agreement). Analysis for this case study was done using data from **Jan 2021 to Dec 2021**, which is stored in separate files for each month.
 Files were saved in a folder(Capstone_project) for easy access. I was able to confirm that each sheet has the same number of columns having the same names.
 For each sheet i created a column called “ride_length”, then Calculated the length of each ride by subtracting the column “started_at” from the column “ended_at” (for example, =D2-C2) and formatted as HH:MM:SS using Format > Cells > Time > 37:30:55.
 A column called “day_of_week” was created and  i calculated the day of the week that each ride started using the “WEEKDAY” command (for example, =WEEKDAY(C2,1)) in each month file, then formatted as a number with no decimals, noting that 1 = Sunday and 7 = Saturday.
 I deleted rows that had ride start time later than ride end time using "started_at > ended_at".
 
-##ANALYZE
+**ANALYZE**
 
 I imported the data into R and merged the 12 files into one data frame after loading the following packages.
 ```{r}
@@ -145,7 +145,7 @@ cyclist1_df %>%
 aggregate(ride_lenght ~ member_casual + day_of_week, FUN = mean)
 ```
 
-##SHARE
+**SHARE**
 
 I created plot in **R** using ggplot2 then exported data to **Tableau** for more visuals
 
@@ -158,7 +158,7 @@ cyclist1_df %>%
   geom_col(position = "dodge")
 ```
 Below is a dashboard created using **Tableau** showing usage by members.
-[Dashboard] (https://public.tableau.com/views/CAPSTONEPROJECT_16570229578750/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link)
+[Dashboard](https://public.tableau.com/views/CAPSTONEPROJECT_16570229578750/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link)
 
 Save data to CSV.
 ```{r}
@@ -168,9 +168,9 @@ write.csv(cyclist1_df, file = "~/capstone_project/cyclist_year.csv", row.names =
 ```
 
 
-##ACT
+**ACT**
 
-Bases on insights from our analysis we can guide the marketing campaign to convert casual riders into annual members. This well help show *how casual riders and annual members use Cyclistic bikes differently*.
+Bases on insights from my analysis i can guide the marketing campaign to convert casual riders into annual members. This well help show **how casual riders and annual members use Cyclistic bikes differently**.
 
 **Findings**:
 * Casual riders prefer to take longer trips averaging more than twice from members, which could mean Casual riders used Cyclistic bikes for leisure.
