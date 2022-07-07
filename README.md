@@ -5,7 +5,7 @@
 
 **INTRODUCTION**
 
-I am a junior data analyst working in the marketing analyst team at Cyclistic, a bike-share company in Chicago.
+I am a junior data analyst working in the marketing analyst team at Cyclistic, a fictional bike-share company in Chicago.
 In 2016, Cyclistic launched a successful bike-share offering. Since then, the program has grown to a fleet of 5,824 bicycles that are geotracked and locked into a network of 692 stations across Chicago. The bikes can be unlocked from one station and returned to any other station in the system anytime.
 
 Cyclistic’s marketing strategy relied on building general awareness and appealing to broad consumer segments.One approach that helped make these things possible was the flexibility of its pricing plans: single-ride passes, full-day passes,
@@ -57,6 +57,7 @@ The below shows a view of the newly created data frame
 ```{r}
 head(cyclist_df)
 ```
+
 
 The newly created extra column was removed
 ```{r}
