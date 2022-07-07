@@ -1,6 +1,6 @@
-**Title: "Capstone Project_Cyclistic-bike-share-analysis-case-study"
-Author: "Harrison Osiezagha"
-Date: '2022-07-06'
+**Title:** **Capstone Project_Cyclistic-bike-share-analysis-case-study**
+**Author:** **Harrison Osiezagha**
+**Date:** **2022-07-06**
 
 
 **INTRODUCTION**
@@ -24,7 +24,7 @@ In order to increase revenue, the company wants to come up with a new marketing 
    
 **PREPARE**
 
-I used Cyclistic’s historical trip data to analyze and identify trends, which was downloaded [here](link https://divvy-tripdata.s3.amazonaws.com/index.html). The data was made available by Motivate International Inc. under this [license](https://www.divvybikes.com/data-license-agreement). Analysis for this case study was done using data from **Jan 2021 to Dec 2021**, which is stored in separate files for each month.
+I used Cyclistic’s historical trip data to analyze and identify trends, which was downloaded [here](https://divvy-tripdata.s3.amazonaws.com/index.html). The data was made available by Motivate International Inc. under this [license](https://www.divvybikes.com/data-license-agreement). Analysis for this case study was done using data from **Jan 2021 to Dec 2021**, which is stored in separate files for each month.
 Files were saved in a folder(Capstone_project) for easy access. I was able to confirm that each sheet has the same number of columns having the same names.
 For each sheet i created a column called “ride_length”, then Calculated the length of each ride by subtracting the column “started_at” from the column “ended_at” (for example, =D2-C2) and formatted as HH:MM:SS using Format > Cells > Time > 37:30:55.
 A column called “day_of_week” was created and  i calculated the day of the week that each ride started using the “WEEKDAY” command (for example, =WEEKDAY(C2,1)) in each month file, then formatted as a number with no decimals, noting that 1 = Sunday and 7 = Saturday.
@@ -157,7 +157,8 @@ cyclist1_df %>%
   ggplot(aes(x = day_of_week, y = ride_lenght, fill = member_casual)) +
   geom_col(position = "dodge")
 ```
-Below is a dashboard created using **Tableau** showing usage by members.
+Dashboard created using **Tableau** showing usage by members can be seen below.
+
 [Dashboard](https://public.tableau.com/views/CAPSTONEPROJECT_16570229578750/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link)
 
 Save data to CSV.
