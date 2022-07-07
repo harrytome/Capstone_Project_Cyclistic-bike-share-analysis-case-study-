@@ -52,11 +52,14 @@ cyclist_df <- list.files(path='~/capstone_project', pattern = "*.csv", full.name
   bind_rows
 cyclist_df
 ```
+![dataframe](https://user-images.githubusercontent.com/102047903/177877852-92958aea-79e5-4615-9fa7-fe07c5a13694.PNG)
 
-The below shows a view of the newly created data frame
+
+The below gives a view of the newly created data frame
 ```{r}
 head(cyclist_df)
 ```
+![Head](https://user-images.githubusercontent.com/102047903/177877948-d6798ff4-463b-477e-890e-818e8f68af48.PNG)
 
 
 The newly created extra column was removed
@@ -87,6 +90,8 @@ Rows with null values were removed and a new data frame was created.
 cyclist1_df <-na.omit(cyclist_df)
 cyclist1_df
 ```
+![omit columns](https://user-images.githubusercontent.com/102047903/177878090-91e99dd8-8866-476a-b916-098e2e2db7b9.png)
+
 
 The below was used to check the overview of the data.
 
@@ -97,6 +102,13 @@ summary(cyclist1_df)
 str(cyclist1_df)
 skim_without_charts(cyclist1_df)
 ```
+![column_dimension](https://user-images.githubusercontent.com/102047903/177878292-61646174-ba01-4adb-b6d8-02b154e79766.png)
+
+![summary](https://user-images.githubusercontent.com/102047903/177878773-61e86d97-3acf-46f8-8cb5-0ec7611ce1e9.png)
+
+![structure](https://user-images.githubusercontent.com/102047903/177878826-318e87d5-abc6-4626-b85b-c5e67d06fe1c.png)
+
+![skim_image](https://user-images.githubusercontent.com/102047903/177878922-fe8d5721-2598-4e86-95a3-3ea5690f9cbb.png)
 
 There are a few problems that needed to be fixed:
 (1) The data can only be aggregated at the ride-level, which is too granular. Additional columns of data — such as day, month, year — that provide additional opportunities to aggregate the data.
@@ -119,7 +131,7 @@ cyclist1_df <- cyclist1_df[,-c(16:17)]
 cyclist1_df
 ```
 Descriptive analysis was done as shown below.
-Analysis on ride_length (all figures in seconds).
+*Analysis on ride_length (all figures in seconds).*
 ```{r}
 mean(cyclist1_df$ride_lenght)
 median(cyclist1_df$ride_lenght)
@@ -133,18 +145,22 @@ aggregate(cyclist1_df$ride_lenght ~ cyclist1_df$member_casual, FUN = median)
 aggregate(cyclist1_df$ride_lenght ~ cyclist1_df$member_casual, FUN = max)
 ```
 
+![analysis1](https://user-images.githubusercontent.com/102047903/177879084-114b2f91-f015-40ab-9ed8-83a1b599e219.png)
+
 Average ride time by each day for members vs casual users.
 ```{r}
 aggregate(cyclist1_df$ride_lenght ~ cyclist1_df$member_casual + cyclist1_df$day_of_week, FUN = mean)
 ```
 
-Next we ordered the days of the week, then checked the average ride time by each day for members vs casual users
+Next we ordered the days of the week, then checked the average ride time by each day for members vs casual users again.
 ```{r}
 cyclist1_df$day_of_week <- ordered(cyclist1_df$day_of_week, levels=c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"))
 
 cyclist1_df %>%
 aggregate(ride_lenght ~ member_casual + day_of_week, FUN = mean)
 ```
+![analysis2](https://user-images.githubusercontent.com/102047903/177879214-33a957a4-6c1e-4720-8c69-d217f5c40b63.png)
+
 
 **SHARE**
 
@@ -158,6 +174,8 @@ cyclist1_df %>%
   ggplot(aes(x = day_of_week, y = ride_lenght, fill = member_casual)) +
   geom_col(position = "dodge")
 ```
+![Rplot](https://user-images.githubusercontent.com/102047903/177879874-bd9a40e4-6af6-42db-83ed-54d363726298.png)
+
 Dashboard created using **Tableau** showing usage by members can be seen below.
 
 [Dashboard](https://public.tableau.com/views/CAPSTONEPROJECT_16570229578750/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link)
